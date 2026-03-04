@@ -69,8 +69,8 @@
 
                     <div class="text-xs text-slate-500">
                         <?= $locale === 'en'
-                            ? 'Bilingual service available (English/Spanish).'
-                            : 'Servicio bilingüe disponible (Inglés/Español).' ?>
+                            ? 'Personalized service available.'
+                            : 'Servicio personalizado disponible.' ?>
                     </div>
                 </div>
             </div>
@@ -134,11 +134,14 @@
         <!-- Minimal FAQ -->
         <div class="mt-10 grid gap-4 md:grid-cols-3">
             <div class="rounded-3xl border border-slate-100 p-6">
-                <div class="text-sm font-bold"><?= $locale === 'en' ? 'Do you speak English?' : '¿Hablan inglés?' ?></div>
+                <div class="text-sm font-bold">
+                    <?= $locale === 'en' ? 'Do you offer customized services?' : '¿Ofrecen servicios personalizados?' ?>
+                </div>
+
                 <p class="mt-2 text-sm text-slate-600">
                     <?= $locale === 'en'
-                        ? 'Yes. We can provide bilingual support and translation if needed.'
-                        : 'Sí. Podemos brindar soporte bilingüe y traducción si se requiere.' ?>
+                            ? 'Yes. We can tailor our transportation and tour services according to your needs, schedule and destination, subject to availability.'
+                            : 'Sí. Podemos adaptar nuestros servicios de transporte y tours de acuerdo con tus necesidades, horarios y destinos, sujeto a disponibilidad.' ?>
                 </p>
             </div>
             <div class="rounded-3xl border border-slate-100 p-6">

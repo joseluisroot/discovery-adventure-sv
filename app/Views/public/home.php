@@ -16,8 +16,8 @@
 
                 <p class="mt-4 text-slate-600 text-base md:text-lg">
                     <?= $locale === 'en'
-                        ? 'Bilingual service for tourists and corporate clients. Clean vehicles, punctual pickups, and personalized attention.'
-                        : 'Servicio bilingüe para turistas y clientes corporativos. Vehículos limpios, puntualidad y atención personalizada.' ?>
+                        ? 'Service for tourists and corporate clients. Clean vehicles, punctual pickups, and personalized attention.'
+                        : 'Servicio para turistas y clientes corporativos. Vehículos limpios, puntualidad y atención personalizada.' ?>
                 </p>
 
                 <div class="mt-6 flex flex-col sm:flex-row gap-3">
@@ -31,15 +31,15 @@
                     </a>
                 </div>
 
-                <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
+                <div class="mt-6 grid grid-cols-1 gap-3 text-sm">
                     <div class="rounded-xl border border-slate-100 p-4">
                         <?php
                         $stats = $reviewStats ?? ['count' => 0, 'avg_total' => 0, 'avg_attention' => 0];
                         $avg = (float)($stats['avg_total'] ?? 0);
                         $stars = (int) round($avg);
                         ?>
-
-                        <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
+                        <div class="text-slate-600"><?= $locale === 'en' ? 'Client satisfaction' : 'Satisfacción del Cliente' ?></div>
+                        <div class="mt-6 grid grid-cols-1 gap-3 text-sm">
                             <div class="rounded-xl border border-slate-100 p-4">
                                 <div class="flex items-center gap-2">
                                     <div class="text-amber-500">
@@ -62,12 +62,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="text-slate-600"><?= $locale === 'en' ? 'Client satisfaction' : 'Satisfacción' ?></div>
                     </div>
-                    <div class="rounded-xl border border-slate-100 p-4">
-                        <div class="font-bold"><?= $locale === 'en' ? 'Bilingual' : 'Bilingüe' ?></div>
-                        <div class="text-slate-600"><?= $locale === 'en' ? 'English & Spanish' : 'Inglés y Español' ?></div>
-                    </div>
+
                 </div>
             </div>
 

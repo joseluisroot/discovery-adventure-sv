@@ -10,8 +10,8 @@ $t = [
         ? 'Private Tours & Transportation Across El Salvador'
         : 'Tours Privados y Transporte Turístico en El Salvador',
     'sub' => $locale === 'en'
-        ? 'Beaches, mountains, volcanoes and iconic places — with comfort, safety and bilingual support.'
-        : 'Playas, montañas, volcanes y lugares emblemáticos — con comodidad, seguridad y servicio bilingüe.',
+        ? 'Beaches, mountains, volcanoes and iconic places — with comfort, safety and personalized attention.'
+        : 'Playas, montañas, volcanes y lugares emblemáticos — con comodidad, seguridad.',
     'ctaMain' => $locale === 'en' ? 'Plan a tour via WhatsApp' : 'Planear tour por WhatsApp',
     'ctaFleet' => $locale === 'en' ? 'See fleet' : 'Ver flota',
     'sectionRoutes' => $locale === 'en' ? 'Featured routes' : 'Rutas destacadas',
@@ -121,8 +121,8 @@ function wa_tour_link(string $phone, string $locale, string $routeName): string 
 
                 <div class="mt-4 text-xs text-slate-500">
                     <?= $locale === 'en'
-                        ? 'Bilingual support available · Fast booking via WhatsApp'
-                        : 'Servicio bilingüe disponible · Reserva rápida por WhatsApp' ?>
+                        ? 'Personalized Service available · Fast booking via WhatsApp'
+                        : 'Servicio personalizado disponible · Reserva rápida por WhatsApp' ?>
                 </div>
             </div>
 
@@ -187,8 +187,8 @@ function wa_tour_link(string $phone, string $locale, string $routeName): string 
 
                 <div class="grid gap-3">
                     <div class="rounded-2xl bg-white/10 p-4">
-                        <div class="text-sm font-semibold"><?= $locale === 'en' ? 'Bilingual service' : 'Servicio bilingüe' ?></div>
-                        <div class="mt-1 text-sm text-white/80"><?= $locale === 'en' ? 'English/Spanish support for a smoother trip.' : 'Soporte en inglés/español para una mejor experiencia.' ?></div>
+                        <div class="text-sm font-semibold"><?= $locale === 'en' ? 'Custom service' : 'Servicio personalizado' ?></div>
+                        <div class="mt-1 text-sm text-white/80"><?= $locale === 'en' ? 'Custom services support for a smoother trip.' : 'Soporte de servicio personalizado para una mejor experiencia.' ?></div>
                     </div>
                     <div class="rounded-2xl bg-white/10 p-4">
                         <div class="text-sm font-semibold"><?= $locale === 'en' ? 'Comfort & cleanliness' : 'Comodidad y limpieza' ?></div>

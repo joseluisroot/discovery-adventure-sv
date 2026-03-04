@@ -18,8 +18,8 @@ $t = [
         ? 'Corporate Transportation You Can Trust'
         : 'Transporte Corporativo en el que Puedes Confiar',
     'sub' => $locale === 'en'
-        ? 'Punctual, professional and comfortable rides for executives, teams and events — with bilingual support.'
-        : 'Traslados puntuales, profesionales y cómodos para ejecutivos, equipos y eventos — con servicio bilingüe.',
+        ? 'Punctual, professional and comfortable rides for executives, teams and events — with personalized services.'
+        : 'Traslados puntuales, profesionales y cómodos para ejecutivos, equipos y eventos — con servicio personalizado.',
     'ctaMain' => $locale === 'en' ? 'Request a corporate quote' : 'Solicitar cotización corporativa',
     'ctaContact' => $locale === 'en' ? 'Contact via WhatsApp' : 'Contactar por WhatsApp',
     'sectionServices' => $locale === 'en' ? 'Corporate services' : 'Servicios corporativos',
@@ -111,8 +111,8 @@ $services = [
 
                 <div class="mt-4 text-xs text-slate-500">
                     <?= $locale === 'en'
-                        ? 'Bilingual support available · Clear coordination by WhatsApp'
-                        : 'Servicio bilingüe disponible · Coordinación clara por WhatsApp' ?>
+                        ? 'Personalized services available · Clear coordination by WhatsApp'
+                        : 'Servicio personalizado disponible · Coordinación clara por WhatsApp' ?>
                 </div>
             </div>
 
@@ -180,7 +180,7 @@ $services = [
                     </div>
                     <div class="rounded-2xl bg-white/10 p-4">
                         <div class="text-sm font-semibold"><?= $locale === 'en' ? 'Professional communication' : 'Comunicación profesional' ?></div>
-                        <div class="mt-1 text-sm text-white/80"><?= $locale === 'en' ? 'Clear instructions, fast replies, bilingual support.' : 'Indicaciones claras, respuestas rápidas, soporte bilingüe.' ?></div>
+                        <div class="mt-1 text-sm text-white/80"><?= $locale === 'en' ? 'Clear instructions, fast replies, profesional support.' : 'Indicaciones claras, respuestas rápidas, soporte profesional.' ?></div>
                     </div>
                     <div class="rounded-2xl bg-white/10 p-4">
                         <div class="text-sm font-semibold"><?= $locale === 'en' ? 'Comfort & clean standards' : 'Comodidad y estándares de limpieza' ?></div>

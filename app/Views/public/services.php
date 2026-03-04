@@ -86,7 +86,6 @@
                     <li class="flex gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-slate-900"></span><?= $locale === 'en' ? 'Executive trips and meetings' : 'Traslados ejecutivos y reuniones' ?></li>
                     <li class="flex gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-slate-900"></span><?= $locale === 'en' ? 'Airport transfers for staff/clients' : 'Traslados al aeropuerto para personal/clientes' ?></li>
                     <li class="flex gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-slate-900"></span><?= $locale === 'en' ? 'Scheduled routes (monthly contracts)' : 'Rutas programadas (contratos mensuales)' ?></li>
-                    <li class="flex gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-slate-900"></span><?= $locale === 'en' ? 'Bilingual service available' : 'Servicio bilingüe disponible' ?></li>
                 </ul>
 
                 <div class="mt-6 flex flex-col sm:flex-row gap-3">

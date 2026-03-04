@@ -56,8 +56,8 @@ function stars(float $value): string {
 
                 <div class="mt-4 text-xs text-slate-500">
                     <?= $locale === 'en'
-                            ? 'Fast booking · Bilingual support available'
-                            : 'Reserva rápida · Servicio bilingüe disponible' ?>
+                            ? 'Fast booking · Personalized Service available'
+                            : 'Reserva rápida · Servicio personalizado disponible' ?>
                 </div>
             </div>
 

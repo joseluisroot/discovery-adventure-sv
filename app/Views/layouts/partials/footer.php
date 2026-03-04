@@ -71,8 +71,8 @@ $wa = $isEn
             <div class="flex gap-4">
                 <a class="hover:text-slate-700" href="<?= base_url($locale.'/contact') ?>"><?= esc($labels['contact']) ?></a>
                 <span class="text-slate-300">|</span>
-                <a class="hover:text-slate-700" href="base_url($locale.'/privacy')"><?= $isEn ? 'Privacy' : 'Privacidad' ?></a>
-                <a class="hover:text-slate-700" href="base_url($locale.'/terms')"><?= $isEn ? 'Terms' : 'Términos' ?></a>
+                <a class="hover:text-slate-700" href="<?= base_url($locale.'/privacy') ?>"><?= $isEn ? 'Privacy' : 'Privacidad' ?></a>
+                <a class="hover:text-slate-700" href="<?= base_url($locale. '/terms') ?>"><?= $isEn ? 'Terms' : 'Términos' ?></a>
             </div>
         </div>
     </div>
