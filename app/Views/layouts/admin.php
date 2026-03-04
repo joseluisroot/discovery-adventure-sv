@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= esc($meta['title'] ?? 'Admin | Discovery Adventure SV') ?></title>
     <link rel="stylesheet" href="<?= base_url('assets/app.css?v=' . time()) ?>">
+    <link rel="icon" type="image/x-icon" href="<?= base_url('favicon.png') ?>">
 </head>
 
 <body class="bg-slate-50 text-slate-900 antialiased">

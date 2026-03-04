@@ -7,6 +7,10 @@
     <title><?= esc($meta['title'] ?? 'Discovery Adventure SV') ?></title>
     <meta name="description" content="<?= esc($meta['description'] ?? '') ?>">
 
+    <link rel="icon" type="image/x-icon" href="<?= base_url('favicon.png') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('favicon-32x32.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('favicon-16x16.png') ?>">
+
     <link rel="canonical" href="<?= esc($meta['canonical'] ?? current_url()) ?>">
 
     <!-- OpenGraph -->
