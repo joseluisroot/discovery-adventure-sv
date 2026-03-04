@@ -3,7 +3,9 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Models\CustomerModel;
 use App\Models\ReviewModel;
+use App\Models\ServiceModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class DashboardController extends BaseController
@@ -12,9 +14,11 @@ class DashboardController extends BaseController
     {
         $locale = service('request')->getLocale();
 
+        // =========================
+        // REVIEWS (tu lógica actual)
+        // =========================
         $reviewModel = new ReviewModel();
 
-        // Traer un set reciente (si luego quieres histórico, lo hacemos con SQL agregado)
         $reviews = $reviewModel->orderBy('id', 'DESC')->findAll(200);
 
         $total = count($reviews);
@@ -48,7 +52,6 @@ class DashboardController extends BaseController
             if ($score >= 4.2) $topCount++;
             if ($score > 0 && $score < 3.5) {
                 $lowCount++;
-                // guardamos unas pocas para “acciones”
                 if (count($needsFollowUp) < 5) $needsFollowUp[] = $r;
             }
         }
@@ -62,8 +65,49 @@ class DashboardController extends BaseController
         $topPct = $total ? round(($topCount / $total) * 100, 1) : 0.0;
         $lowPct = $total ? round(($lowCount / $total) * 100, 1) : 0.0;
 
+        // =========================
+        // OPERACIONES (Services/Customers)
+        // =========================
+        $serviceModel  = new ServiceModel();
+        $customerModel = new CustomerModel();
+
+        $today    = date('Y-m-d');
+        $tomorrow = date('Y-m-d', strtotime('+1 day'));
+
+        // KPIs Operativos (queries independientes para evitar builder “consumido”)
+        $ops = [
+            'customers_total' => $customerModel->countAllResults(),
+            'services_total'  => $serviceModel->countAllResults(),
+            'today_total'     => $serviceModel->where('service_date', $today)->countAllResults(),
+            'tomorrow_total'  => $serviceModel->where('service_date', $tomorrow)->countAllResults(),
+            'pending_total'   => $serviceModel->where('status', 'pending')->countAllResults(),
+            'confirmed_total' => $serviceModel->where('status', 'confirmed')->countAllResults(),
+        ];
+
+        // Listas rápidas (top 8)
+        $todayServices = $serviceModel->select('services.*, customers.name as customer_name, customers.phone as customer_phone')
+            ->join('customers', 'customers.id = services.customer_id', 'left')
+            ->where('services.service_date', $today)
+            ->orderBy('services.service_time', 'ASC')
+            ->findAll(8);
+
+        $tomorrowServices = $serviceModel->select('services.*, customers.name as customer_name, customers.phone as customer_phone')
+            ->join('customers', 'customers.id = services.customer_id', 'left')
+            ->where('services.service_date', $tomorrow)
+            ->orderBy('services.service_time', 'ASC')
+            ->findAll(8);
+
+        $pendingServices = $serviceModel->select('services.*, customers.name as customer_name, customers.phone as customer_phone')
+            ->join('customers', 'customers.id = services.customer_id', 'left')
+            ->whereIn('services.status', ['pending', 'confirmed'])
+            ->orderBy('services.service_date', 'ASC')
+            ->orderBy('services.service_time', 'ASC')
+            ->findAll(8);
+
         return view('admin/dashboard', [
             'locale' => $locale,
+
+            // Reviews
             'metrics' => [
                 'reviews_total' => $total,
                 'reviews_published' => $publishedCount,
@@ -76,6 +120,14 @@ class DashboardController extends BaseController
                 'low_pct' => $lowPct,
             ],
             'needsFollowUp' => $needsFollowUp,
+
+            // Operaciones
+            'ops' => $ops,
+            'today' => $today,
+            'tomorrow' => $tomorrow,
+            'todayServices' => $todayServices,
+            'tomorrowServices' => $tomorrowServices,
+            'pendingServices' => $pendingServices,
         ]);
     }
 }

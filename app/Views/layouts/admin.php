@@ -34,6 +34,9 @@
 
                 <a class="text-sm px-3 py-2 rounded-lg hover:bg-slate-50 border border-slate-200"
                    href="<?= base_url($locale.'/admin/reviews') ?>">Reviews</a>
+
+                <a class="text-sm px-3 py-2 rounded-lg hover:bg-slate-50 border border-slate-200"
+                   href="<?= base_url($locale.'/admin/logout') ?>">Logout</a>
             </div>
         </div>
     </div>

@@ -36,7 +36,7 @@ $routes->get('/', function () {
 });
 
 $routes->group('{locale}/admin', [
-    'filter' => 'daLocale',
+    'filter' => ['daLocale', 'adminAuth'],
     'where' => ['locale' => 'es|en']
 ], function ($routes) {
     $routes->get('/', 'Admin\DashboardController::index');
@@ -75,5 +75,11 @@ $routes->group('{locale}/admin', [
     $routes->get('services/(:num)/edit', 'Admin\ServicesController::edit/$1');
     $routes->post('services/(:num)', 'Admin\ServicesController::update/$1');
     $routes->post('services/(:num)/delete', 'Admin\ServicesController::delete/$1');
+
+
+    // Auth (público dentro de admin)
+    $routes->get('login', 'Admin\AuthController::login');
+    $routes->post('attempt', 'Admin\AuthController::attempt');
+    $routes->get('logout', 'Admin\AuthController::logout');
 
 });
