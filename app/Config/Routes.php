@@ -36,7 +36,7 @@ $routes->get('/', function () {
 });
 
 $routes->group('{locale}/admin', [
-    'filter' => ['daLocale'],
+    'filter' => ['daLocale', 'adminAuth'],
     'where' => ['locale' => 'es|en']
 ], function ($routes) {
     $routes->get('/', 'Admin\DashboardController::index');
@@ -47,14 +47,6 @@ $routes->group('{locale}/admin', [
 
     $routes->post('reviews/unpublish/(:num)', 'Admin\ReviewsController::unpublish/$1');
     $routes->post('review-invites/mark-sent/(:num)', 'Admin\ReviewInvitesController::markSent/$1');
-
-    // ✅ SystemController PRO (lo nuevo)
-    $routes->group('system', static function($routes) {
-        $routes->get('ping',   'Admin\SystemController::ping');
-        $routes->get('migrate','Admin\SystemController::migrate');
-        $routes->get('seed',   'Admin\SystemController::seed');
-        $routes->get('clear',  'Admin\SystemController::clear');
-    });
 
     // Customers
     $routes->get('customers', 'Admin\CustomersController::index');
@@ -81,13 +73,6 @@ $routes->group('{locale}/admin', [
     $routes->get('login', 'Admin\AuthController::login');
     $routes->post('attempt', 'Admin\AuthController::attempt');
     $routes->get('logout', 'Admin\AuthController::logout');
-
-});
-
-$routes->group('{locale}/admin', [
-    'filter' => ['daLocale'],
-    'where' => ['locale' => 'es|en']
-], function ($routes) {
 
     // ✅ SystemController PRO (lo nuevo)
     $routes->group('system', static function($routes) {
