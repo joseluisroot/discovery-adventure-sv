@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Bloquear carpetas internas (si algún día existen)
+Disallow: /admin/
+Disallow: /app/
+Disallow: /system/
+Disallow: /vendor/
+
+# Sitemap
+Sitemap: https://discoveryadventuresv.com/sitemap.xml

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- HOME ES -->
+    <url>
+        <loc>https://discoveryadventuresv.com/es</loc>
+        <lastmod>2026-02-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://discoveryadventuresv.com/es"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://discoveryadventuresv.com/en"/>
+    </url>
+
+    <!-- HOME EN -->
+    <url>
+        <loc>https://discoveryadventuresv.com/en</loc>
+        <lastmod>2026-02-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://discoveryadventuresv.com/en"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://discoveryadventuresv.com/es"/>
+    </url>
+
+    <!-- SERVICES -->
+    <url>
+        <loc>https://discoveryadventuresv.com/es/services</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://discoveryadventuresv.com/en/services</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- FLEET -->
+    <url>
+        <loc>https://discoveryadventuresv.com/es/fleet</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://discoveryadventuresv.com/en/fleet</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- REVIEWS -->
+    <url>
+        <loc>https://discoveryadventuresv.com/es/reviews</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://discoveryadventuresv.com/en/reviews</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- CONTACT -->
+    <url>
+        <loc>https://discoveryadventuresv.com/es/contact</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://discoveryadventuresv.com/en/contact</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- PRIVACY -->
+    <url>
+        <loc>https://discoveryadventuresv.com/es/privacy</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://discoveryadventuresv.com/en/privacy</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- TERMS -->
+    <url>
+        <loc>https://discoveryadventuresv.com/es/terms</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://discoveryadventuresv.com/en/terms</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>
