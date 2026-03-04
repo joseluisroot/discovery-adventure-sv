@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
+use Config\Services;
 
 class SystemController extends BaseController
 {
@@ -22,6 +23,8 @@ class SystemController extends BaseController
         // Token
         $token = (string) $this->request->getGet('token');
         $expected = (string) env('app.systemToken');
+
+        var_dump($token);
 
         if ($expected === '' || $token === '' || !hash_equals($expected, $token)) {
             return $this->response->setStatusCode(401)->setBody('Unauthorized.');
