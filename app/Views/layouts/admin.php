@@ -17,11 +17,21 @@
                 Discovery Adventure SV <span class="text-slate-400 font-semibold">Admin</span>
             </div>
 
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 flex-wrap">
                 <a class="text-sm px-3 py-2 rounded-lg hover:bg-slate-50 border border-slate-200"
                    href="<?= base_url($locale.'/admin') ?>">Dashboard</a>
+
+                <!-- ✅ NUEVO: Customers -->
+                <a class="text-sm px-3 py-2 rounded-lg hover:bg-slate-50 border border-slate-200"
+                   href="<?= base_url($locale.'/admin/customers') ?>">Customers</a>
+
+                <!-- ✅ NUEVO: Services -->
+                <a class="text-sm px-3 py-2 rounded-lg hover:bg-slate-50 border border-slate-200"
+                   href="<?= base_url($locale.'/admin/services') ?>">Services</a>
+
                 <a class="text-sm px-3 py-2 rounded-lg hover:bg-slate-50 border border-slate-200"
                    href="<?= base_url($locale.'/admin/review-invites') ?>">Invites</a>
+
                 <a class="text-sm px-3 py-2 rounded-lg hover:bg-slate-50 border border-slate-200"
                    href="<?= base_url($locale.'/admin/reviews') ?>">Reviews</a>
             </div>

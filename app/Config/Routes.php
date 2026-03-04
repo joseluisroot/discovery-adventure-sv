@@ -56,4 +56,24 @@ $routes->group('{locale}/admin', [
         $routes->get('clear',  'Admin\SystemController::clear');
     });
 
+    // Customers
+    $routes->get('customers', 'Admin\CustomersController::index');
+    $routes->get('customers/new', 'Admin\CustomersController::new');
+    $routes->post('customers', 'Admin\CustomersController::create');
+    $routes->get('customers/(:num)/edit', 'Admin\CustomersController::edit/$1');
+    $routes->post('customers/(:num)', 'Admin\CustomersController::update/$1');
+    $routes->post('customers/(:num)/delete', 'Admin\CustomersController::delete/$1');
+
+    // Services
+    $routes->get('services', 'Admin\ServicesController::index');
+
+// Crear service asociado a un customer
+    $routes->get('customers/(:num)/services/new', 'Admin\ServicesController::newForCustomer/$1');
+    $routes->post('customers/(:num)/services', 'Admin\ServicesController::createForCustomer/$1');
+
+// Editar/actualizar/eliminar service (opcional pero recomendado)
+    $routes->get('services/(:num)/edit', 'Admin\ServicesController::edit/$1');
+    $routes->post('services/(:num)', 'Admin\ServicesController::update/$1');
+    $routes->post('services/(:num)/delete', 'Admin\ServicesController::delete/$1');
+
 });
