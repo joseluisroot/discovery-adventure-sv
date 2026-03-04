@@ -24,8 +24,8 @@ class SystemController extends BaseController
         $token = (string) $this->request->getGet('token');
         $expected = (string) env('app.systemToken');
 
-        var_dump($token);
-        var_dump($expected);
+        //var_dump($token);
+        //var_dump($expected);
 
         if ($expected === '' || $token === '' || !hash_equals($expected, $token)) {
             return $this->response->setStatusCode(401)->setBody('Unauthorized.');
