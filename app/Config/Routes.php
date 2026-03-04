@@ -48,4 +48,12 @@ $routes->group('{locale}/admin', [
     $routes->post('reviews/unpublish/(:num)', 'Admin\ReviewsController::unpublish/$1');
     $routes->post('review-invites/mark-sent/(:num)', 'Admin\ReviewInvitesController::markSent/$1');
 
+    // ✅ SystemController PRO (lo nuevo)
+    $routes->group('system', static function($routes) {
+        $routes->get('ping',   'Admin\SystemController::ping');
+        $routes->get('migrate','Admin\SystemController::migrate');
+        $routes->get('seed',   'Admin\SystemController::seed');
+        $routes->get('clear',  'Admin\SystemController::clear');
+    });
+
 });
