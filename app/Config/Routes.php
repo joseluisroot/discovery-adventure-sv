@@ -36,7 +36,7 @@ $routes->get('/', function () {
 });
 
 $routes->group('{locale}/admin', [
-    'filter' => ['daLocale', 'adminAuth'],
+    'filter' => ['daLocale'],
     'where' => ['locale' => 'es|en']
 ], function ($routes) {
     $routes->get('/', 'Admin\DashboardController::index');
