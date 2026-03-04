@@ -83,3 +83,18 @@ $routes->group('{locale}/admin', [
     $routes->get('logout', 'Admin\AuthController::logout');
 
 });
+
+$routes->group('{locale}/admin', [
+    'filter' => ['daLocale'],
+    'where' => ['locale' => 'es|en']
+], function ($routes) {
+
+    // ✅ SystemController PRO (lo nuevo)
+    $routes->group('system', static function($routes) {
+        $routes->get('ping',   'Admin\SystemController::ping');
+        $routes->get('migrate','Admin\SystemController::migrate');
+        $routes->get('seed',   'Admin\SystemController::seed');
+        $routes->get('clear',  'Admin\SystemController::clear');
+    });
+
+});
